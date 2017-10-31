@@ -8,4 +8,6 @@
     <color name="nav_item_selected">@color/colorAccent</color>
     <color name="nav_title_unselected">#000000</color>
     <color name="nav_icon_unselected">#9999A4</color>
+    <color name="tab_unselected_color">#D3D3D3</color>
+    <color name="tab_indicator_color">#bfa537</color>
 </resources>

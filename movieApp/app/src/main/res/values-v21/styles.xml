@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Style for Sliding Tab-->
+
+    <style name="SlidingTabTheme" parent="SlidingTabTheme.Base">
+        <item name="android:elevation">@dimen/toolbar_elevation</item>
+    </style>
+
+</resources>
