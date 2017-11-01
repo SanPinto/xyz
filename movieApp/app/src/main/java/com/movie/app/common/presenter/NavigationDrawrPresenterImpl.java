@@ -3,6 +3,8 @@ package com.movie.app.common.presenter;
 import android.content.Context;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
+import android.support.v4.view.GravityCompat;
+import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 
 import com.movie.app.R;
@@ -55,12 +57,28 @@ public class NavigationDrawrPresenterImpl implements NavigationDrawerContract.Na
     public void onNavigationItemSelected(List<NavigationItem> navigationList, int pos, FragmentManager fragmentManager, AppCompatActivity activity, int containerId) {
         if (activity.findViewById(R.id.container) != null) {
             if (fragmentManager.findFragmentById(R.id.container) == null) {
-                FragmentHelper.replaceFragment(activity, containerId, HomeFragment.getInstance(navigationList, pos));
+                HomeFragment fragment = HomeFragment.getInstance(navigationList, pos);
+                FragmentHelper.replaceFragment(activity, containerId, fragment);
+                fragment.setView(mView);
+
             } else {
-                //Todo
+                Fragment fragment = fragmentManager.findFragmentById(R.id.container);
+                if(fragment != null && fragment instanceof HomeFragment) {
+                    ((HomeFragment) fragment).moveToSelectedTab(pos);
+                }
             }
         }
 
+    }
+
+    @Override
+    public void closeDrawer(DrawerLayout drawer) {
+        drawer.closeDrawer(GravityCompat.START);
+    }
+
+    @Override
+    public boolean isDrawerOpen(DrawerLayout drawer) {
+        return drawer.isDrawerOpen(GravityCompat.START);
     }
 
 

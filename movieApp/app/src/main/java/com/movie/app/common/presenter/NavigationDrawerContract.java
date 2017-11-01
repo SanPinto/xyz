@@ -2,6 +2,7 @@ package com.movie.app.common.presenter;
 
 import android.content.Context;
 import android.support.v4.app.FragmentManager;
+import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 
 import com.movie.app.common.model.NavigationItem;
@@ -19,9 +20,14 @@ public class NavigationDrawerContract extends BaseContract{
         List<NavigationItem> getNavigationItems(Context context);
 
         void onNavigationItemSelected(List<NavigationItem> navigationList, int pos, FragmentManager fragmentManager, AppCompatActivity activity, int containerId);
+
+        void closeDrawer(DrawerLayout drawer);
+
+        boolean isDrawerOpen(DrawerLayout drawer);
     }
 
     public interface NavigationDrawerView {
 
+        void updateNavDrawer(int position);
     }
 }
