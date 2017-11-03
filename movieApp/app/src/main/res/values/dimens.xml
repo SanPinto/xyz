@@ -10,4 +10,6 @@
     <dimen name="activity_padding">16dp</dimen>
     <dimen name="toolbar_elevation">2dp</dimen>
     <dimen name="tab_indicator_height">3dp</dimen>
+    <!--Horizontal Progress bar -->
+    <dimen name="progress_bar_height">15dp</dimen>
 </resources>

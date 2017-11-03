@@ -10,4 +10,6 @@
     <color name="nav_icon_unselected">#9999A4</color>
     <color name="tab_unselected_color">#D3D3D3</color>
     <color name="tab_indicator_color">#bfa537</color>
+    <color name="dark">#000000</color>
+    <color name="movie_item_color">@color/nav_icon_unselected</color>
 </resources>
